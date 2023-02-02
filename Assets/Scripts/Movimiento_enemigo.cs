@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movimiento_enemigo : MonoBehaviour
 {
+
+    public float velocidad = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,20 @@ public class Movimiento_enemigo : MonoBehaviour
     {
         if(gameObject.GetComponent<Transform>().position.y > 1.5)
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -30f * Time.deltaTime));
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -velocidad * Time.deltaTime));
+        
+        
+        }else if(gameObject.GetComponent<Transform>().position.x > -2.4){
+
+
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-velocidad * Time.deltaTime, 0f));
+
+
+        }else if(gameObject.GetComponent<Transform>().position.y > -3.9)
+        {
+
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -velocidad * Time.deltaTime));
+
         }
         
 
