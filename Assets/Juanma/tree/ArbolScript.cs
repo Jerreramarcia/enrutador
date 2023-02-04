@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ArbolScript : MonoBehaviour
 {
     public int vida = 100;
-    public Image healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +19,15 @@ public class ArbolScript : MonoBehaviour
     }
 
     public void takeDmg(int dmg){
-        this.vida -= dmg;
+        if(vida>=0){
+            this.vida -= dmg;
+        }
     }
 
     public void setHealthBar(){
         float my_Health = vida;
+    }
+    public int getVida(){
+        return vida;
     }
 }

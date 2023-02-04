@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
 
-    public string Levelstoload;
+    public string Levelstoload="SampleScene";
 
     public void loadScene(){
 
