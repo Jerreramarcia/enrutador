@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Movimiento_enemigo : MonoBehaviour
@@ -11,37 +12,25 @@ public class Movimiento_enemigo : MonoBehaviour
     public int dmg=1;
     public int multiplicadorDmg = 1;
     public float multiplicadorDmgRecibido = 1f;
-
-    public GameObject arbol;
+    [SerializeField] Text hpText;
+    [SerializeField] Image hpBar;
+    
+    [SerializeField]GameObject arbol;
     
     ArbolScript arbolScript;
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {        
+          
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.GetComponent<Transform>().position.y > 1.5)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -velocidad * Time.deltaTime));
-        
-        
-        }else if(gameObject.GetComponent<Transform>().position.x > -2.4){
+         
+        hpBar.fillAmount =(float) arbol.gameObject.GetComponent<ArbolScript>().vida/ 100;   
+        hpText.text = arbol.gameObject.GetComponent<ArbolScript>().vida.ToString() + " HP";
 
-
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-velocidad * Time.deltaTime, 0f));
-
-
-        }else if(gameObject.GetComponent<Transform>().position.y > -3.9)
-        {
-
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -velocidad * Time.deltaTime));
-
-        }
-        
 
     }
     
@@ -52,6 +41,9 @@ public class Movimiento_enemigo : MonoBehaviour
         {
             gameObject.SetActive(false);
             collision.gameObject.GetComponent<ArbolScript>().takeDmg(dmg*multiplicadorDmg);
+            hpText.text = collision.gameObject.GetComponent<ArbolScript>().vida.ToString() + " HP";
+            hpText.text = collision.gameObject.GetComponent<ArbolScript>().vida.ToString() + " HP";
+            hpBar.fillAmount = collision.gameObject.GetComponent<ArbolScript>().vida / 100;
             //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
     }
