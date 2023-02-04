@@ -4,21 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuButtons : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
-
-    public string Levelstoload="Try";
+    // Start is called before the first frame update
+        public string Levelstoload = "MainMenu";
 
     public void loadScene(){
 
         SceneManager.LoadScene(Levelstoload);
 
     }
-
-    public void exitGame(){
-
-        Application.Quit();
-
-    }
-
 }
