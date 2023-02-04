@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movimiento_enemigo : MonoBehaviour
 {
 
     public float velocidad = 0;
+    public float vida=100;
+    public int dmg=1;
+    public int multiplicadorDmg = 1;
+    public float multiplicadorDmgRecibido = 1f;
+
+    public GameObject arbol;
+    
+    ArbolScript arbolScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,4 +44,16 @@ public class Movimiento_enemigo : MonoBehaviour
         
 
     }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Entramos");
+        if (collision.gameObject.tag == "Finish")
+        {
+            gameObject.SetActive(false);
+            collision.gameObject.GetComponent<ArbolScript>().takeDmg(dmg*multiplicadorDmg);
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
+    }
+
 }
