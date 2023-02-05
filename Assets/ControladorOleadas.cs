@@ -101,10 +101,18 @@ public class ControladorOleadas : MonoBehaviour
         muertes = muertes + 1;
     }
 
-    public void SumarSavia()
+    public void SumarSavia(int sumasavia)
     {
-        savia = savia + 10;
+        savia = savia + sumasavia;
         texto2 = savia.ToString();
         saaavia.text = texto2;
+    }
+
+    public void RestarSavia(int restarsavia)
+    {
+        savia = savia - restarsavia;
+        texto2 = savia.ToString();
+        saaavia.text = texto2;
+
     }
 }

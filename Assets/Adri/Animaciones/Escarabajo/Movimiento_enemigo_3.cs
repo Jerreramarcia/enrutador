@@ -94,7 +94,6 @@ public class Movimiento_enemigo_3 : MonoBehaviour
         {
 
             ControladorSonido.Instance.SumarMuertes();
-            ControladorOleadas.Instance.SumarSavia();
             gameObject.SetActive(false);
             
 

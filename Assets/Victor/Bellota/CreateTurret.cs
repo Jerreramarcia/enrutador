@@ -7,6 +7,12 @@ public class CreateTurret : MonoBehaviour
     [SerializeField]
     private GameObject towerPrefab;
 
+    [SerializeField]
+    private int precioCompra = 10;
+
+    [SerializeField]
+    private int precioMejora = 20;
+
     public GameObject TowerPrefab
     {
         get
@@ -17,7 +23,16 @@ public class CreateTurret : MonoBehaviour
 
     void OnMouseDown() 
     {
-        PlaceTower();
+        if(ControladorOleadas.Instance.savia > precioCompra)
+        {
+
+            PlaceTower();
+
+            ControladorOleadas.Instance.RestarSavia(precioCompra);
+
+        }
+
+    
     }
 
     private void PlaceTower()

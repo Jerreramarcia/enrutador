@@ -90,7 +90,9 @@ public class LogicaTorreta : MonoBehaviour
     
         MoveToTarget(PrefabDisparo, trgt);
 
+        Debug.Log("He disparado");
 
+        trgt.Quitarvida(damage);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
