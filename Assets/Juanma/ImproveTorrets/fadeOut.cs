@@ -7,10 +7,8 @@ public class fadeOut : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text texto;
-    public bool _fadein = false;
-    public bool _fadeout = false;
-    public float position_x = -97.18f;
-    public float position_y = -185f;
+    bool improved = false;
+
     void Start()
     {
     }
@@ -18,11 +16,18 @@ public class fadeOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //transform.position = new Vector2(transform.position.x,transform.position.y+1); 
-        transform.position = new Vector3(position_x,position_y,0f); 
+        if(improved){
+            transform.localPosition += Vector3.up;
+            texto.CrossFadeAlpha(0, 0.455f, false);
+        }
+    }
 
-        //texto.CrossFadeAlpha(0, 0.455f, false);
+    public void setPositio(int x, int y){
+        transform.localPosition= new Vector2(x,y); 
+    }
+
+    public void Improve(){
+        improved = true;
     }
 
 }
