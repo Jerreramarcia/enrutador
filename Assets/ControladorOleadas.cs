@@ -11,6 +11,10 @@ public class ControladorOleadas : MonoBehaviour
     private string texto;
     public Text saaavia;
     private string texto2;
+    private bool oleada1 = false;   
+    private bool oleada2 = false;
+    private bool oleada3 = false;
+    private bool oleada4 = false;
     private float tiempo_inicio = 5f;
     private float tiempo_espera = 3f;
     private int numero_aleatorio;
@@ -21,7 +25,6 @@ public class ControladorOleadas : MonoBehaviour
     public GameObject bicho2;
     public GameObject bicho3;
     int contador = 0;
-    int contador2 = 10;
     public float muertes = 0;
     public int savia = 0;
   
@@ -70,9 +73,142 @@ public class ControladorOleadas : MonoBehaviour
 
         if (empieza == true)
         {
-            if (contador2 == contador)
-            {
 
+                if (contador >= 10)
+                {
+                    texto = "Oleada 2";
+                    ControladorSonido.Instance.EjecutarSonido(oleadasonido);
+                    Oleada.text = texto;
+                    
+                    if (contador >= 20)
+                    {
+                        texto = "Oleada 3";
+                        ControladorSonido.Instance.EjecutarSonido(oleadasonido);
+                        Oleada.text = texto;
+                        oleada1 = false;
+                        oleada2 = true;
+                        if (contador >= 25)
+                        {
+                            texto = "Oleada 4";
+                            ControladorSonido.Instance.EjecutarSonido(oleadasonido);
+                            Oleada.text = texto;
+                            oleada2 = false;
+                            oleada3 = true;
+                            if (contador >= 30)
+                            {
+                                oleada3 = false;
+                                texto = "Oleada 4";
+                                ControladorSonido.Instance.EjecutarSonido(oleadasonido);
+                                Oleada.text = texto;
+                            }
+
+                        else
+                        {
+
+                            if (tiempo_espera <= 0)
+                            {
+                                numero_aleatorio = Random.Range(1, 4);
+                                Debug.Log(numero_aleatorio);
+
+                                if (numero_aleatorio == 1)
+                                {
+                                    Instantiate(bicho1);
+                                    contador = contador + 1;
+                                }
+
+                                if (numero_aleatorio == 2)
+                                {
+                                    Instantiate(bicho2);
+                                    contador = contador + 1;
+                                }
+
+                                if (numero_aleatorio == 3)
+                                {
+                                    Instantiate(bicho3);
+                                    contador = contador + 1;
+                                }
+
+                                tiempo_espera = 3f;
+                            }
+                            else
+                            {
+                                tiempo_espera -= Time.deltaTime;
+                            }
+
+
+                        }
+                    }
+                    else
+                    {
+
+                        if (tiempo_espera <= 0)
+                        {
+                            numero_aleatorio = Random.Range(1, 4);
+                            Debug.Log(numero_aleatorio);
+
+                            if (numero_aleatorio == 1)
+                            {
+                                Instantiate(bicho1);
+                                contador = contador + 1;
+                            }
+
+                            if (numero_aleatorio == 2)
+                            {
+                                Instantiate(bicho2);
+                                contador = contador + 1;
+                            }
+
+                            if (numero_aleatorio == 3)
+                            {
+                                Instantiate(bicho3);
+                                contador = contador + 1;
+                            }
+
+                            tiempo_espera = 3f;
+                        }
+                        else
+                        {
+                            tiempo_espera -= Time.deltaTime;
+                        }
+
+
+                    }
+                }
+                else
+                {
+
+                    if (tiempo_espera <= 0)
+                    {
+                        numero_aleatorio = Random.Range(1, 4);
+                        Debug.Log(numero_aleatorio);
+
+                        if (numero_aleatorio == 1)
+                        {
+                            Instantiate(bicho1);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 2)
+                        {
+                            Instantiate(bicho2);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 3)
+                        {
+                            Instantiate(bicho3);
+                            contador = contador + 1;
+                        }
+
+                        tiempo_espera = 3f;
+                    }
+                    else
+                    {
+                        tiempo_espera -= Time.deltaTime;
+                    }
+
+
+                }
 
             }
             else
@@ -81,7 +217,7 @@ public class ControladorOleadas : MonoBehaviour
                 if (tiempo_espera <= 0)
                 {
 
-                    Instantiate(bicho3);
+                    Instantiate(bicho1);
                     contador++;
                     tiempo_espera = 4f;
 
@@ -92,7 +228,9 @@ public class ControladorOleadas : MonoBehaviour
                     tiempo_espera -= Time.deltaTime;
                 }
             }
-        }
+
+
+            }
 
     }
 
@@ -101,10 +239,18 @@ public class ControladorOleadas : MonoBehaviour
         muertes = muertes + 1;
     }
 
-    public void SumarSavia()
+    public void SumarSavia(int sumasavia)
     {
-        savia = savia + 10;
+        savia = savia + sumasavia;
         texto2 = savia.ToString();
         saaavia.text = texto2;
+    }
+
+    public void RestarSavia(int restarsavia)
+    {
+        savia = savia - restarsavia;
+        texto2 = savia.ToString();
+        saaavia.text = texto2;
+
     }
 }

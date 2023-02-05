@@ -1105,7 +1105,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 100
 --- !u!222 &291846822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   bicho2: {fileID: 6703121290039394340, guid: ecc2e053877dda4429da868e2c0b1f1d, type: 3}
   bicho3: {fileID: 6703121290039394340, guid: 79d2d0a2fd1569841a307521f39cfab6, type: 3}
   muertes: 0
-  savia: 0
+  savia: 100
 --- !u!114 &358235498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073482539092714549, guid: 1fe0f98115136e045ac95980d3fc6db5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3462691
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 5073482539092714549, guid: 1fe0f98115136e045ac95980d3fc6db5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1776,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073482539092714549, guid: 1fe0f98115136e045ac95980d3fc6db5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.846572
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 5073482539092714549, guid: 1fe0f98115136e045ac95980d3fc6db5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5106,7 +5106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073482539092714549, guid: 1fe0f98115136e045ac95980d3fc6db5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7927613
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 5073482539092714549, guid: 1fe0f98115136e045ac95980d3fc6db5, type: 3}
       propertyPath: m_LocalPosition.z

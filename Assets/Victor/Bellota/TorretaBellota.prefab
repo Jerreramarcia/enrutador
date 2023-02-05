@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabDisparo: {fileID: 2498593744497116877, guid: cdb8bb4d058dee3439dc8038e382842e, type: 3}
-  damage: 100000
+  damage: 30
   velocidadBala: 3
   attackCooldown: 3
   precioCompra: 10

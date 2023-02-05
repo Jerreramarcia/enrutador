@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabDisparo: {fileID: 2498593744497116877, guid: cdb8bb4d058dee3439dc8038e382842e, type: 3}
-  damage: 100000
+  damage: 30
   velocidadBala: 3
   attackCooldown: 3
   precioCompra: 10
@@ -283,7 +283,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: de3dece0f87785847a4ec29e2a4b3044, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74c52a3ea384b76439a76927d9567b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -304,7 +304,7 @@ Animator:
   m_GameObject: {fileID: 8481407900474749033}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 66033427727f7d442b37f2240cbb6587, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea754ec3580761b48ba6c1f63f770df1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

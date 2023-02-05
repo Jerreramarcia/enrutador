@@ -231,7 +231,6 @@ public class Movimiento_1_enemigo : MonoBehaviour
         {
 
             ControladorSonido.Instance.SumarMuertes();
-            ControladorOleadas.Instance.SumarSavia();
             gameObject.SetActive(false);
 
 

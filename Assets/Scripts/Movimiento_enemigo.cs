@@ -29,6 +29,18 @@ public class Movimiento_enemigo : MonoBehaviour
          
 
     }
+
+    public void Quitarvida( int damage)
+    {
+        vida = vida - damage;
+        Debug.Log(vida);
+        if(vida <= 0)
+        {
+            gameObject.SetActive(false);
+            ControladorOleadas.Instance.SumarSavia(10);
+        }
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
