@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 0
-  vida: 100
+  vida: 20
   dmg: 10
   multiplicadorDmg: 1
   multiplicadorDmgRecibido: 1
