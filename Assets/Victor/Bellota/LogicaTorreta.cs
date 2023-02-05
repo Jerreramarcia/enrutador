@@ -24,7 +24,7 @@ public class LogicaTorreta : MonoBehaviour
     private int damage = 10;
 
     [SerializeField]
-    private int velocidadBala = 3;
+    private int velocidadBala = 1;
 
     [SerializeField]
     private float attackCooldown = 3;
@@ -52,7 +52,8 @@ public class LogicaTorreta : MonoBehaviour
     private void MoveToTarget(GameObject prefabToMove, Movimiento_enemigo targetToHit){
         if(targetToHit != null && targetToHit.gameObject.activeSelf)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetToHit.transform.position, Time.deltaTime * velocidadBala);
+            Debug.Log(prefabToMove.transform.position);
+            PrefabDisparo.transform.position = Vector3.MoveTowards(transform.position, targetToHit.getPosicion(), Time.deltaTime * velocidadBala);
         }
     }
 
@@ -77,17 +78,19 @@ public class LogicaTorreta : MonoBehaviour
         {
             if(canAttack)
             {
-                Shoot();
+                Shoot(target);
                 canAttack = false;
             }
         }
     }
 
-    private void Shoot()
+    private void Shoot(Movimiento_enemigo trgt)
     {
         Instantiate(PrefabDisparo, transform.parent.position, Quaternion.identity);
     
-        MoveToTarget(PrefabDisparo, target);
+        MoveToTarget(PrefabDisparo, trgt);
+
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
