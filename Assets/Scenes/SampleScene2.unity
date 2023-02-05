@@ -1983,6 +1983,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 466422451483082971, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466422451483082971, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4502145595557193368, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
       propertyPath: m_Name
       value: vida
@@ -2071,6 +2079,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6227363471409411717, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_Name
+      value: mejorarTorretaTexto1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227363471409411717, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6343839976678507390, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.96875
@@ -2086,6 +2102,22 @@ PrefabInstance:
     - target: {fileID: 6343839976678507390, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 177.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020944986981303333, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 41.4903
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020944986981303333, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 32.6149
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020944986981303333, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -118.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020944986981303333, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.307
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7ebb35a9ef114a43938767b428c6558, type: 3}
@@ -2267,7 +2299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &712181982
 MonoBehaviour:
   m_ObjectHideFlags: 0

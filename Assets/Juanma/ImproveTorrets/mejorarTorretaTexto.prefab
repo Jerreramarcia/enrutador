@@ -112,7 +112,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texto: {fileID: 4922754809532543699}
-  _fadein: 0
-  _fadeout: 0
-  position_x: -337.1
-  position_y: -131.5

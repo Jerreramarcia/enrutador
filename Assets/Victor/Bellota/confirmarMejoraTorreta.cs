@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class confirmarMejoraTorreta : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject myPrefab;
     void Start()
     {
         
@@ -22,6 +24,7 @@ public class confirmarMejoraTorreta : MonoBehaviour
         {
             Debug.Log("Click boton mejora");
             this.transform.parent.GetComponent<LogicaTorreta>().UpgradeTurret();
+            Instantiate(myPrefab, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             this.gameObject.SetActive(false);
         }
     }
