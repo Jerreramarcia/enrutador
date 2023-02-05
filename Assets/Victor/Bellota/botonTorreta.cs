@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager>
+public class botonTorreta : MonoBehaviour
 {
-    //Testing
     [SerializeField]
     private GameObject towerPrefab;
 
@@ -14,17 +13,5 @@ public class GameManager : Singleton<GameManager>
         {
             return towerPrefab;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
