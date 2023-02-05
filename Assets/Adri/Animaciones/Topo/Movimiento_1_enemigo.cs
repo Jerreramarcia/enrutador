@@ -191,7 +191,6 @@ public class Movimiento_1_enemigo : MonoBehaviour
                 dentro = false;
                 tiempo1 = 10f;
                 gameObject.GetComponent<Animator>().SetBool("dentro", true);
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
 
             tiempo1 -= Time.deltaTime;
@@ -204,7 +203,6 @@ public class Movimiento_1_enemigo : MonoBehaviour
                 dentro = true;
                 tiempo2 = 5f;
                 gameObject.GetComponent<Animator>().SetBool("dentro", false);
-                gameObject.GetComponent<BoxCollider2D>().enabled = true;
             }
 
             tiempo2 -= Time.deltaTime;

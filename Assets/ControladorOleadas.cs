@@ -11,6 +11,16 @@ public class ControladorOleadas : MonoBehaviour
     private string texto;
     public Text saaavia;
     private string texto2;
+
+    public GameObject mapa1;
+
+    public GameObject mapa2;
+
+    public GameObject arbol;
+
+    public GameObject mapa3;
+
+    public GameObject mapa4;
     private bool oleada1 = false;   
     private bool oleada2 = false;
     private bool oleada3 = false;
@@ -24,6 +34,12 @@ public class ControladorOleadas : MonoBehaviour
     public GameObject bicho1;
     public GameObject bicho2;
     public GameObject bicho3;
+    public GameObject bicho4;
+
+    public GameObject bicho5;
+
+    public GameObject bicho6;
+
     int contador = 0;
     public float muertes = 0;
     public int savia = 0;
@@ -77,12 +93,18 @@ public class ControladorOleadas : MonoBehaviour
                 if (contador >= 10)
                 {
                     texto = "Oleada 2";
+                    arbol.gameObject.GetComponent<ArbolScript>().level = 2;
+                    
+                    mapa1.SetActive(true);
                     ControladorSonido.Instance.EjecutarSonido(oleadasonido);
                     Oleada.text = texto;
                     
                     if (contador >= 20)
                     {
                         texto = "Oleada 3";
+                        arbol.gameObject.GetComponent<ArbolScript>().level = 3;
+
+                         mapa2.SetActive(true);
                         ControladorSonido.Instance.EjecutarSonido(oleadasonido);
                         Oleada.text = texto;
                         oleada1 = false;
@@ -90,14 +112,18 @@ public class ControladorOleadas : MonoBehaviour
                         if (contador >= 25)
                         {
                             texto = "Oleada 4";
+                            arbol.gameObject.GetComponent<ArbolScript>().level = 4;
+
+                             mapa3.SetActive(true);
                             ControladorSonido.Instance.EjecutarSonido(oleadasonido);
                             Oleada.text = texto;
                             oleada2 = false;
                             oleada3 = true;
                             if (contador >= 30)
                             {
+                                mapa4.SetActive(true);
                                 oleada3 = false;
-                                texto = "Oleada 4";
+                                texto = "Oleada 5";
                                 ControladorSonido.Instance.EjecutarSonido(oleadasonido);
                                 Oleada.text = texto;
                             }
@@ -107,7 +133,7 @@ public class ControladorOleadas : MonoBehaviour
 
                             if (tiempo_espera <= 0)
                             {
-                                numero_aleatorio = Random.Range(1, 4);
+                                numero_aleatorio = Random.Range(1, 7);
                                 Debug.Log(numero_aleatorio);
 
                                 if (numero_aleatorio == 1)
@@ -143,7 +169,7 @@ public class ControladorOleadas : MonoBehaviour
 
                         if (tiempo_espera <= 0)
                         {
-                            numero_aleatorio = Random.Range(1, 4);
+                            numero_aleatorio = Random.Range(1, 7);
                             Debug.Log(numero_aleatorio);
 
                             if (numero_aleatorio == 1)
@@ -164,6 +190,24 @@ public class ControladorOleadas : MonoBehaviour
                                 contador = contador + 1;
                             }
 
+                             if (numero_aleatorio == 4)
+                        {
+                            Instantiate(bicho4);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 5)
+                        {
+                            Instantiate(bicho5);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 6)
+                        {
+                            Instantiate(bicho6);
+                            contador = contador + 1;
+                        }
+
                             tiempo_espera = 3f;
                         }
                         else
@@ -179,7 +223,7 @@ public class ControladorOleadas : MonoBehaviour
 
                     if (tiempo_espera <= 0)
                     {
-                        numero_aleatorio = Random.Range(1, 4);
+                        numero_aleatorio = Random.Range(1, 7);
                         Debug.Log(numero_aleatorio);
 
                         if (numero_aleatorio == 1)
@@ -197,6 +241,23 @@ public class ControladorOleadas : MonoBehaviour
                         if (numero_aleatorio == 3)
                         {
                             Instantiate(bicho3);
+                            contador = contador + 1;
+                        }
+                        if (numero_aleatorio == 4)
+                        {
+                            Instantiate(bicho4);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 5)
+                        {
+                            Instantiate(bicho5);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 6)
+                        {
+                            Instantiate(bicho6);
                             contador = contador + 1;
                         }
 
@@ -217,9 +278,47 @@ public class ControladorOleadas : MonoBehaviour
                 if (tiempo_espera <= 0)
                 {
 
-                    Instantiate(bicho1);
-                    contador++;
-                    tiempo_espera = 4f;
+                   
+                        numero_aleatorio = Random.Range(1, 7);
+                        Debug.Log(numero_aleatorio);
+
+                        if (numero_aleatorio == 1)
+                        {
+                            Instantiate(bicho1);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 2)
+                        {
+                            Instantiate(bicho2);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 3)
+                        {
+                            Instantiate(bicho3);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 4)
+                        {
+                            Instantiate(bicho4);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 5)
+                        {
+                            Instantiate(bicho5);
+                            contador = contador + 1;
+                        }
+
+                        if (numero_aleatorio == 6)
+                        {
+                            Instantiate(bicho6);
+                            contador = contador + 1;
+                        }
+
+                        tiempo_espera = 3f;
 
                 }
                 else
