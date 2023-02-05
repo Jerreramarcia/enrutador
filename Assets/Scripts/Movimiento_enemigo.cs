@@ -12,6 +12,10 @@ public class Movimiento_enemigo : MonoBehaviour
     public int dmg=1;
     public int multiplicadorDmg = 1;
     public float multiplicadorDmgRecibido = 1f;
+    
+    public Vector3 getPosicion (){
+            return this.transform.position;
+    }
 
     // Start is called before the first frame update
     void Start()
