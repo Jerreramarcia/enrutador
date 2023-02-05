@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Movimiento_1_enemigo : MonoBehaviour
 {
+    [SerializeField] private AudioClip movimiento;
     public float velocidadX;
     public float velocidadY;
     public float velocidadY2;
     public float tiempo1 = 8f;
     public float tiempo2 = 5f;
+    public float tiempo3 = 3f;
     public bool dentro = true;
     private bool primer_camino = false;
     private bool segundo_camino = false;
@@ -210,13 +212,28 @@ public class Movimiento_1_enemigo : MonoBehaviour
 
         }
 
+        if(tiempo3 <= 0)
+        {
+            tiempo3 = 3f;
+            ControladorSonido.Instance.EjecutarSonido(movimiento);
+
+        }
+        else
+        {
+            tiempo3 -= Time.deltaTime;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "muerte")
+        if (collision.transform.tag == "Finish")
         {
-            Destroy(gameObject);
+
+            ControladorSonido.Instance.SumarMuertes();
+            ControladorOleadas.Instance.SumarSavia();
+            gameObject.SetActive(false);
+
 
         }
     }

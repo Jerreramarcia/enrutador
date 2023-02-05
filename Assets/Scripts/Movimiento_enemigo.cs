@@ -12,12 +12,7 @@ public class Movimiento_enemigo : MonoBehaviour
     public int dmg=1;
     public int multiplicadorDmg = 1;
     public float multiplicadorDmgRecibido = 1f;
-    [SerializeField] Text hpText;
-    [SerializeField] Image hpBar;
-    
-    [SerializeField]GameObject arbol;
-    
-    ArbolScript arbolScript;
+
     // Start is called before the first frame update
     void Start()
     {        
@@ -28,23 +23,14 @@ public class Movimiento_enemigo : MonoBehaviour
     void Update()
     {
          
-        hpBar.fillAmount =(float) arbol.gameObject.GetComponent<ArbolScript>().vida/ 100;   
-        hpText.text = arbol.gameObject.GetComponent<ArbolScript>().vida.ToString() + " HP";
-
 
     }
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Entramos");
-        if (collision.gameObject.tag == "Finish")
+
+        if (collision.gameObject.tag == "enemy")
         {
-            gameObject.SetActive(false);
-            collision.gameObject.GetComponent<ArbolScript>().takeDmg(dmg*multiplicadorDmg);
-            hpText.text = collision.gameObject.GetComponent<ArbolScript>().vida.ToString() + " HP";
-            hpText.text = collision.gameObject.GetComponent<ArbolScript>().vida.ToString() + " HP";
-            hpBar.fillAmount = collision.gameObject.GetComponent<ArbolScript>().vida / 100;
-            //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            Physics2D.IgnoreCollision( collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
     }
 

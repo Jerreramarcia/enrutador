@@ -128,6 +128,7 @@ public class Movimiento_Escarabajo : MonoBehaviour
                             gameObject.GetComponent<Animator>().SetBool("giro", false);
                         }
 
+
                         if (gameObject.GetComponent<Transform>().position.y < -1.50 && decimo_camino == false)
                         {
                             gameObject.transform.Translate(0, velocidadY2 * Time.deltaTime, 0);

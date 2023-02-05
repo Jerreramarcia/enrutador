@@ -160,4 +160,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 100
-  healthBar: {fileID: 0}
+  hpText: {fileID: 0}
+  hpBar: {fileID: 0}
+  arbol1: {fileID: 21300000, guid: 36e8aa7108bd07a4c8972d2e2010cc21, type: 3}
+  arbol2: {fileID: 21300000, guid: 7d5997e8b2162664ebc7f3e079c5d572, type: 3}
+  arbol3: {fileID: 21300000, guid: b81c9c69e78d0ec46945e795fbba12eb, type: 3}
+  arbol4: {fileID: 21300000, guid: 4649508cac44a7d47a95876cd59a493c, type: 3}
+  spriteRenderer: {fileID: 902939782173702407}
+  arbol: {fileID: 902939782173702405}
+  level: 1
