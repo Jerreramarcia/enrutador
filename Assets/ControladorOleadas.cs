@@ -6,10 +6,13 @@ using UnityEngine.UI;
 
 public class ControladorOleadas : MonoBehaviour
 {
+    public static ControladorOleadas Instance;
     public Text Oleada;
     private string texto;
+    public Text saaavia;
+    private string texto2;
     private float tiempo_inicio = 5f;
-    private float tiempo_espera = 4f;
+    private float tiempo_espera = 3f;
     private int numero_aleatorio;
     private bool empieza = false;
     private bool empieza2 = false;
@@ -20,6 +23,8 @@ public class ControladorOleadas : MonoBehaviour
     int contador = 0;
     int contador2 = 10;
     public float muertes = 0;
+    public int savia = 0;
+  
 
 
     // Start is called before the first frame update
@@ -29,12 +34,24 @@ public class ControladorOleadas : MonoBehaviour
      
         
     }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
 
-        Debug.Log(muertes);
+        
 
         //Oleada 1
 
@@ -51,9 +68,9 @@ public class ControladorOleadas : MonoBehaviour
             tiempo_inicio -= Time.deltaTime;
         }
 
-        if(empieza == true)
+        if (empieza == true)
         {
-            if(contador2 == contador)
+            if (contador2 == contador)
             {
 
 
@@ -61,10 +78,10 @@ public class ControladorOleadas : MonoBehaviour
             else
             {
 
-                if(tiempo_espera <= 0)
+                if (tiempo_espera <= 0)
                 {
 
-                    Instantiate(bicho1);
+                    Instantiate(bicho3);
                     contador++;
                     tiempo_espera = 4f;
 
@@ -77,8 +94,17 @@ public class ControladorOleadas : MonoBehaviour
             }
         }
 
-        
+    }
 
-        
+    public void ContadoMuertes()
+    {
+        muertes = muertes + 1;
+    }
+
+    public void SumarSavia()
+    {
+        savia = savia + 10;
+        texto2 = savia.ToString();
+        saaavia.text = texto2;
     }
 }

@@ -12,7 +12,6 @@ public class Movimiento_enemigo_3 : MonoBehaviour
     private bool tercer_camino = false;
     private bool cuarto_camino = false;
     private bool quinto_camino = false;
-    private GameObject 
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +68,9 @@ public class Movimiento_enemigo_3 : MonoBehaviour
                 else
                 {
                     cuarto_camino = true;
+
                 }
+
 
                 if (gameObject.GetComponent<Transform>().position.y < 0.42 && quinto_camino == false)
                 {
@@ -78,6 +79,8 @@ public class Movimiento_enemigo_3 : MonoBehaviour
                 else
                 {
                     quinto_camino = true;
+
+
                 }
             }
 
@@ -87,9 +90,12 @@ public class Movimiento_enemigo_3 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "muerte")
+        if (collision.transform.tag == "Finish")
         {
-            Destroy(gameObject);
+
+            ControladorSonido.Instance.SumarMuertes();
+            ControladorOleadas.Instance.SumarSavia();
+            gameObject.SetActive(false);
             
 
         }

@@ -170,4 +170,19 @@ public class Movimiento_enemigo_2 : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Finish")
+        {
+
+            ControladorSonido.Instance.SumarMuertes();
+            ControladorOleadas.Instance.SumarSavia();
+            gameObject.SetActive(false);
+
+
+        }
+    }
+
+
 }

@@ -31,4 +31,10 @@ public class ControladorSonido : MonoBehaviour
     {
         audioSource.PlayOneShot(sonido);
     }
+
+    public void SumarMuertes()
+    {
+
+        ControladorOleadas.Instance.ContadoMuertes();
+    }
 }

@@ -227,9 +227,13 @@ public class Movimiento_1_enemigo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "muerte")
+        if (collision.transform.tag == "Finish")
         {
-            Destroy(gameObject);
+
+            ControladorSonido.Instance.SumarMuertes();
+            ControladorOleadas.Instance.SumarSavia();
+            gameObject.SetActive(false);
+
 
         }
     }
